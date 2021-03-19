@@ -104,16 +104,16 @@ header #burger #close {
 }
 
 header #burger #menu {
-  background-color: white;
+  background-color: rgba(12, 29, 228, 0.26);
   width: 175px;
   height: 0;
   position: absolute;
   overflow: hidden;
-  -webkit-transition: 0.2s all linear;
-  transition: 0.2s all linear;
+  -webkit-transition: 0.2s all cubic-bezier(1, -0.97, 0.86, 0.18);
+  transition: 0.2s all cubic-bezier(1, -0.97, 0.86, 0.18);
   padding: 0 20px;
   left: 50px;
-  top: -3px;
+  top: -55px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -129,6 +129,10 @@ header #burger #menu .link-burger {
   color: #fcae61;
   text-decoration: none;
   font-size: 14px;
+}
+
+header #burger #menu .link-burger:visited {
+  text-decoration: underline;
 }
 
 #blocks_smart {
@@ -259,7 +263,7 @@ header #burger #menu .link-burger {
   margin-bottom: 69px;
 }
 
-#bloks_benefits .benefits_pros .pros1 .pros_elipse_1 {
+#bloks_benefits .benefits_pros .pros1 .pros_elipse {
   width: 88px;
   height: 88px;
   border-radius: 44px;
@@ -267,8 +271,28 @@ header #burger #menu .link-burger {
   margin: auto;
 }
 
-#bloks_benefits .benefits_pros .pros1 .pros_elipse_1 img {
+#bloks_benefits .benefits_pros .pros1 .pros_elipse img {
   margin: 15px;
+}
+
+#bloks_benefits .benefits_pros .pros1 #elipse2 {
+  background-color: #eaf9ff;
+}
+
+#bloks_benefits .benefits_pros .pros1 #elipse3 {
+  background-color: #fff6d3;
+}
+
+#bloks_benefits .benefits_pros .pros1 #elipse4 {
+  background-color: #e4ffee;
+}
+
+#bloks_benefits .benefits_pros .pros1 #elipse5 {
+  background-color: #f4f4ff;
+}
+
+#bloks_benefits .benefits_pros .pros1 #elipse6 {
+  background-color: #fdeee4;
 }
 
 #bloks_benefits .benefits_pros .pros1 h3 {
@@ -314,33 +338,50 @@ header #burger #menu .link-burger {
   text-align: left;
 }
 
-#faq .questions .lists .list_close {
+#faq .questions details summary::-webkit-details-marker {
+  display: none;
+}
+
+#faq .questions details > summary {
+  list-style: none;
+}
+
+#faq .questions details {
   background-color: #f5f7fa;
   padding: 24px 38px 18px 50px;
   margin-bottom: 9px;
 }
 
-#faq .questions .lists .list_close dt {
-  font-size: 20px;
-  line-height: 20px;
-  color: #242f51;
-  font-weight: 600;
-}
-
-#faq .questions .lists .list_close dt .faq_expand {
+#faq .questions details summary {
+  display: block;
+  cursor: pointer;
+  outline-style: none;
   font-size: 24px;
-  line-height: 24px;
   color: #242f51;
-  float: right;
   font-weight: 400;
+  background-color: #f5f7fa;
+  margin-left: -14px;
 }
 
-#faq .questions .lists .list_close dd {
-  font-size: 15px;
-  line-height: 22px;
+#faq .questions details summary::before {
+  content: "+";
+  position: relative;
+  left: 840px;
+}
+
+#faq .questions details[open] summary::before {
+  content: "-";
+}
+
+#faq .questions .details {
+  width: 810px;
+  font-size: 16px;
+  line-height: 26px;
   color: #616368;
   font-weight: 400;
-  display: none;
+  background-color: #f5f7fa;
+  padding: 37px 0 60px 0;
+  margin: 0;
 }
 
 @media screen and (max-width: 1350px) {
@@ -402,6 +443,7 @@ header #burger #menu .link-burger {
   #blocks_smart {
     background-position: 300px 59px, -300px -345px, 770px 110px, 0px 606px;
     background-size: 788px 630px, 1600px 865px, 0 0, 0 0;
+    padding-left: 30px;
   }
   #blocks_smart .smart_1 {
     margin: 105px auto;
@@ -424,12 +466,27 @@ header #burger #menu .link-burger {
   #bloks_benefits .benefits_pros .pros1:nth-child(2n+1) {
     margin-left: 0;
   }
-  h2 {
+  #faq h2 {
     font-size: 28px;
     line-height: 32px;
   }
   #faq .questions {
-    width: 740px;
+    width: 700px;
+  }
+  #faq .questions details {
+    padding: 24px 20px 18px 30px;
+  }
+  #faq .questions details summary {
+    font-size: 18px;
+    margin-left: -10px;
+  }
+  #faq .questions details summary::before {
+    left: 620px;
+  }
+  #faq .questions .details {
+    width: 600px;
+    font-size: 14px;
+    padding: 30px 0 50px 0;
   }
 }
 /*# sourceMappingURL=style.css.map */

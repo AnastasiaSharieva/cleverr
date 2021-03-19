@@ -1,9 +1,24 @@
-// let list_ = list.querySelectorAll('dt');
+//burger-menu
 
-// console.log(list_);
+let burger = document.getElementById("burger");
+let imgClose = document.getElementById("close");
+let imgOpen = document.getElementById("open");
+let menu = document.getElementById("menu");
 
-// for (let dt of list_) {
-// let but_plus = document.createElement('button');
-// but_plus.classList.add('plus');
-// dt.prepend(but_plus);
-// }
+let open = false;
+
+
+function openBurger() {
+    if (open) {
+      menu.style.height = 0;
+      imgOpen.style.display = "inline";
+      imgClose.style.display = "none";
+    } else {
+      menu.style.height = "155px";
+      imgOpen.style.display = "none";
+      imgClose.style.display = "inline";
+    }
+    open = !open;
+  }
+  
+  burger.addEventListener("click", openBurger);

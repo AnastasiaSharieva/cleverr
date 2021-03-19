@@ -100,15 +100,15 @@ header {
         }
 
         #menu {
-            background-color: white;
+            background-color: rgba(12, 29, 228, 0.26);
             width: 175px;
             height: 0;
             position: absolute;
             overflow: hidden;
-            transition: 0.2s all linear;
+            transition: 0.2s all cubic-bezier(1, -0.97, 0.86, 0.18);
             padding: 0 20px;
             left: 50px;
-            top: -3px;
+            top: -55px;
             display: flex;
             flex-direction: column;
 
@@ -118,6 +118,10 @@ header {
                 color: #fcae61;
                 text-decoration: none;
                 font-size: 14px;
+            }
+
+            .link-burger:visited {
+                text-decoration: underline;
             }
         }
     }
@@ -224,7 +228,7 @@ header {
             margin-left: 93px;
             margin-bottom: 69px;
 
-            .pros_elipse_1 {
+            .pros_elipse {
                 width: 88px;
                 height: 88px;
                 border-radius: 44px;
@@ -234,6 +238,26 @@ header {
                 img {
                     margin: 15px;
                 }
+            }
+
+            #elipse2 {
+                background-color: #eaf9ff;
+            }
+
+            #elipse3 {
+                background-color: #fff6d3;
+            }
+
+            #elipse4 {
+                background-color: #e4ffee;
+            }
+
+            #elipse5 {
+                background-color: #f4f4ff;
+            }
+
+            #elipse6 {
+                background-color: #fdeee4;
             }
 
             h3 {
@@ -266,7 +290,6 @@ header {
     text-align: center;
     margin-bottom: 140px;
 
-
     .faq_p {
         padding: 32px 0 65px;
     }
@@ -277,36 +300,50 @@ header {
         margin: auto;
         text-align: left;
 
-        .lists {
+        details summary::-webkit-details-marker {
+            display: none;
+        }
 
-            .list_close {
-                background-color: #f5f7fa;
-                padding: 24px 38px 18px 50px;
-                margin-bottom: 9px;
+        details>summary {
+            list-style: none;
+        }
 
-                dt {
-                    font-size: 20px;
-                    line-height: 20px;
-                    color: #242f51;
-                    font-weight: 600;
+        details {
+            background-color: #f5f7fa;
+            padding: 24px 38px 18px 50px;
+            margin-bottom: 9px;
+        }
 
-                    .faq_expand {
-                        font-size: 24px;
-                        line-height: 24px;
-                        color: #242f51;
-                        float: right;
-                        font-weight: 400;
-                    }
-                }
+        details summary {
+            display: block;
+            cursor: pointer;
+            outline-style: none;
+            font-size: 24px;
+            color: #242f51;
+            font-weight: 400;
+            background-color: #f5f7fa;
+            margin-left: -14px;
+        }
 
-                dd {
-                    font-size: 15px;
-                    line-height: 22px;
-                    color: #616368;
-                    font-weight: 400;
-                    display: none;
-                }
-            }
+        details summary::before {
+            content: "+";
+            position: relative;
+            left: 840px;
+        }
+
+        details[open] summary::before {
+            content: "-";
+        }
+
+        .details {
+            width: 810px;
+            font-size: 16px;
+            line-height: 26px;
+            color: #616368;
+            font-weight: 400;
+            background-color: #f5f7fa;
+            padding: 37px 0 60px 0;
+            margin: 0;
         }
     }
 }
@@ -364,7 +401,6 @@ header {
         }
 
         nav {
-            // margin-top: 10px;
             display: none;
 
             .nav_a {
@@ -388,6 +424,7 @@ header {
     #blocks_smart {
         background-position: 300px 59px, -300px -345px, 770px 110px, 0px 606px;
         background-size: 788px 630px, 1600px 865px, 0 0, 0 0;
+        padding-left: 30px;
 
         .smart_1 {
             margin: 105px auto;
@@ -419,24 +456,33 @@ header {
         }
     }
 
-    h2 {
-        font-size: 28px;
-        line-height: 32px;
-    }
-
     #faq {
+        h2 {
+            font-size: 28px;
+            line-height: 32px;
+        }
+
         .questions {
-            width: 740px;
+            width: 700px;
+
+            details {
+                padding: 24px 20px 18px 30px;
+
+                summary {
+                    font-size: 18px;
+                    margin-left: -10px;
+                }
+            }
+
+            details summary::before {
+                left: 620px;
+            }
+
+            .details {
+                width: 600px;
+                font-size: 14px;
+                padding: 30px 0 50px 0;
+            }
         }
     }
 }
-
-
-
-
-// .list_open {
-//     padding: 51px 36px 78px 50px;
-
-//     dt {
-//         padding-bottom: 37px;
-//     }    прописать в 
